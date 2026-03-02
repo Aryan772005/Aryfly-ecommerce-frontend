@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
+:root {
+  --neon-red: #ff003c;
+  --neon-blue: #00f2ff;
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #121212;
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --navbar-bg: rgba(10, 10, 10, 0.85);
+  --panel-bg: #121212;
+}
+
+.theme-light {
+  --bg-primary: #f8f9fa;
+  --bg-secondary: #ffffff;
+  --text-primary: #121212;
+  --text-secondary: rgba(0, 0, 0, 0.6);
+  --glass-bg: rgba(0, 0, 0, 0.03);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --card-bg: #ffffff;
+  --navbar-bg: rgba(255, 255, 255, 0.9);
+  --panel-bg: #ffffff;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Outfit', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.neon-text {
+  text-shadow: 0 0 10px rgba(255, 0, 60, 0.8),
+    0 0 20px rgba(255, 0, 60, 0.4);
+  letter-spacing: 2px;
+}
+
+.navbar {
+  background: var(--navbar-bg) !important;
+  backdrop-filter: blur(25px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.product-card {
+  background: var(--card-bg) !important;
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 20px !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.product-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  border-color: var(--neon-red) !important;
+  box-shadow: 0 15px 40px rgba(255, 0, 60, 0.2) !important;
+}
+
+.btn-danger {
+  background: linear-gradient(45deg, var(--neon-red), #ff4d00);
+  border: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Hero Search Styles */
+.hero-search-container {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 100%;
+  max-width: 450px;
+  padding: 30px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.4));
+}
+
+.hero-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.hero-search-box input {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+  border-radius: 50px;
+  padding: 15px 25px 15px 55px;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+}
+
+.hero-search-box input:focus {
+  border-color: var(--neon-red) !important;
+  box-shadow: 0 0 20px rgba(255, 0, 60, 0.3);
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+.hero-search-box i {
+  position: absolute;
+  left: 20px;
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Category Scroller */
+.category-scroller {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 10px 0 25px;
+  scrollbar-width: none;
+}
+
+.category-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.category-pill {
+  white-space: nowrap;
+  padding: 10px 25px;
+  border-radius: 50px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+
+.category-pill:hover {
+  border-color: var(--neon-red);
+  color: var(--neon-red);
+}
+
+.category-pill.active {
+  background: var(--neon-red);
+  color: white;
+  border-color: var(--neon-red);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-red);
+}
